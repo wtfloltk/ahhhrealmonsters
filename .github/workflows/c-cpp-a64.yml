@@ -1,0 +1,33 @@
+name: Makefile A64
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container: devkitpro/devkita64:latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: make clean
+      run: make -f Makefile.a64 clean
+
+    - name: make setup
+      run: make -f Makefile.a64 setup     
+      
+    - name: game
+      run: make -f Makefile.a64 game
+
+    - name: all
+      run: make -f Makefile.a64 all
+      
+    - uses: actions/upload-artifact@master
+      with:
+        name: game
+        path: builda64
