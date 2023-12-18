@@ -81,12 +81,6 @@ jobs:
 
         # Update the status and assignees for every issue identified
         # ${CMD[@]}
-
-    - name: make clean
-      run: make clean
-
-    - name: make setup
-      run: ./tp setup --skip-iso
       
     - name: game
       run: make game
