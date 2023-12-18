@@ -36,7 +36,7 @@ jobs:
       uses: actions/checkout@v3
     - name: Run Make (OK)
       run: |
-        ls /opt/devkitpro/
+        ls /opt/devkitpro/devkitA64/bin
         export DEVKITA64=/opt/devkitpro/devkitA64
         make all rels -j$(nproc)
     - name: Create JSON for Progress & Upload
