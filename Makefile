@@ -67,12 +67,12 @@ else
 	SHA1SUM := sha1sum
 endif
 
-AS        		:= $(DEVKITA64)/bin/aarch64-elf-none-as
-OBJCOPY   		:= $(DEVKITA64)/bin/aarch64-elf-none-objcopy
-STRIP     		:= $(DEVKITA64)/bin/aarch64-elf-none-strip
-CC        		:= $(DEVKITA64)/bin/aarch64-elf-none-gcc
-DOLPHIN_LIB_CC 	:= := $(DEVKITA64)/bin/aarch64-elf-none-gcc
-LD        		:= := $(DEVKITA64)/bin/aarch64-elf-none-ld
+AS        		:= ./aarch64-elf-none-as
+OBJCOPY   		:= ./aarch64-elf-none-objcopy
+STRIP     		:= ./aarch64-elf-none-strip
+CC        		:= ./aarch64-elf-none-gcc
+DOLPHIN_LIB_CC 		:= ./aarch64-elf-none-gcc
+LD        		:= ./aarch64-elf-none-ld
 ELF2DOL   		:= $(BUILD_PATH)/elf2dol
 YAZ0   			:= $(BUILD_PATH)/yaz0.so
 PYTHON    		:= python3
