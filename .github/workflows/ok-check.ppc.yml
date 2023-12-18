@@ -86,7 +86,7 @@ jobs:
       run: make clean
 
     - name: make setup
-      run: make setup     
+      run: ./tp setup     
       
     - name: game
       run: make game
