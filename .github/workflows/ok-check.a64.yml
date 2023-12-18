@@ -22,10 +22,7 @@ jobs:
       uses: actions/checkout@v3
     - name: Project Setup
       run: |
-        apt update
-        apt install -y python pip
-        # Install deps & setup
-        pip install --user -r tools/requirements.txt
+        python -m pip install --user -r tools/requirements.txt
         ./tp setup --skip-iso
 
         # Download WiBo
