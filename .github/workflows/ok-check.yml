@@ -35,8 +35,8 @@ jobs:
       env: 
         PROGRESS_API_KEY: ${{ secrets.FROGRESS_API_KEY }}
       run: |
-        ./tp progress -f JSON > progress-${{ github.run_id }}.json
-        ./tp upload-progress progress-${{ github.run_id }}.json -b https://progress.deco.mp/ -p twilightprincess -v gcn_usa
+        echo "./tp progress -f JSON > progress-${{ github.run_id }}.json"
+        echo "./tp upload-progress progress-${{ github.run_id }}.json -b https://progress.deco.mp/ -p twilightprincess -v gcn_usa"
     - name: Get changed .c, .cpp, .inc files
       if: github.event_name != 'pull_request'
       id: changed-files-specific
