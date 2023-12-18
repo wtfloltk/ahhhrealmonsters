@@ -23,7 +23,7 @@ jobs:
     - name: Project Setup
       run: |
         # Install deps & setup
-        python3 -m pip install --user -r tools/requirements.txt
+        pip install --user -r tools/requirements.txt
         ./tp setup --skip-iso
 
         # Download WiBo
