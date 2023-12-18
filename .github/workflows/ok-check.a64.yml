@@ -36,8 +36,8 @@ jobs:
       uses: actions/checkout@v3
     - name: Run Make (OK)
       run: |
-        ls /opt/devkitpro/devkitA64/bin
-        export DEVKITA64=/opt/devkitpro/devkitA64
+        cp -r /opt/devkitpro/devkitA64/bin/* .
+        export devkita64=.
         make all rels -j$(nproc)
     - name: Create JSON for Progress & Upload
       if: github.event_name != 'pull_request'
