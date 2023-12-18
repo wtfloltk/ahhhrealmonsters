@@ -1,4 +1,4 @@
-name: OK Check / Progress Push PPC
+name: OK Check / Progress Push A64
 
 on:
   pull_request:
