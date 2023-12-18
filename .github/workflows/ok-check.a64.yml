@@ -33,7 +33,7 @@ jobs:
     container: devkitpro/devkita64:latest
     steps:
     - name: Run Make (OK)
-      run: make -f Makefile.a64 all rels -j$(nproc) WINE=./wibo
+      run: make all rels  -f Makefile.a64  -j$(nproc) WINE=./wibo
     - name: Create JSON for Progress & Upload
       if: github.event_name != 'pull_request'
       env: 
