@@ -1,0 +1,33 @@
+name: Makefile PPC
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitppc:latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: make clean
+      run: make clean
+
+    - name: make setup
+      run: make setup     
+      
+    - name: game
+      run: make game
+
+    - name: all
+      run: make all
+      
+    - uses: actions/upload-artifact@master
+      with:
+        name: game
+        path: build
