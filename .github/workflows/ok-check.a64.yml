@@ -14,9 +14,9 @@ env:
   STATE_FILE: "tools/pjstate.yml"
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    container: devkitpro/devkita64:latest
+  setup:
+    name: setup
+    runs-on: ubuntu-lates
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -31,8 +31,12 @@ jobs:
         # Download WiBo
         wget https://github.com/decompals/wibo/releases/download/0.4.2/wibo
         chmod +x wibo
+  build:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkita64:latest
+    steps:
     - name: Run Make (OK)
-      run: make all rels -j$(nproc) WINE=./wibo
+      run: make -f Makefile.a64 all rels -j$(nproc) WINE=./wibo
     - name: Create JSON for Progress & Upload
       if: github.event_name != 'pull_request'
       env: 
@@ -88,4 +92,4 @@ jobs:
     - uses: actions/upload-artifact@master
       with:
         name: game
-        path: build
+        path: builda64
