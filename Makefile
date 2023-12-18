@@ -70,9 +70,9 @@ endif
 AS        		:= $(DEVKITA64)/bin/aarch64-elf-none-as
 OBJCOPY   		:= $(DEVKITA64)/bin/aarch64-elf-none-objcopy
 STRIP     		:= $(DEVKITA64)/bin/aarch64-elf-none-strip
-CC        		:= $(DEVKITA64)/bin/aarch64-elf-none-cc
-DOLPHIN_LIB_CC 	:= := $(DEVKITA64)/bin/aarch64-elf-none-cc
-LD        		:= $(WINE_LD) tools/mwcc_compiler/$(MWCC_VERSION)/mwldeppc.exe
+CC        		:= $(DEVKITA64)/bin/aarch64-elf-none-gcc
+DOLPHIN_LIB_CC 	:= := $(DEVKITA64)/bin/aarch64-elf-none-gcc
+LD        		:= := $(DEVKITA64)/bin/aarch64-elf-none-ld
 ELF2DOL   		:= $(BUILD_PATH)/elf2dol
 YAZ0   			:= $(BUILD_PATH)/yaz0.so
 PYTHON    		:= python3
