@@ -70,8 +70,8 @@ endif
 AS        		:= $(DEVKITA64)/bin/aarch64-elf-none-as
 OBJCOPY   		:= $(DEVKITA64)/bin/aarch64-elf-none-objcopy
 STRIP     		:= $(DEVKITA64)/bin/aarch64-elf-none-strip
-CC        		:= $(WINE) tools/mwcc_compiler/$(MWCC_VERSION)/mwcceppc_modded.exe
-DOLPHIN_LIB_CC 	:= $(WINE) tools/mwcc_compiler/1.2.5n/mwcceppc.exe
+CC        		:= $(DEVKITA64)/bin/aarch64-elf-none-cc
+DOLPHIN_LIB_CC 	:= := $(DEVKITA64)/bin/aarch64-elf-none-cc
 LD        		:= $(WINE_LD) tools/mwcc_compiler/$(MWCC_VERSION)/mwldeppc.exe
 ELF2DOL   		:= $(BUILD_PATH)/elf2dol
 YAZ0   			:= $(BUILD_PATH)/yaz0.so
