@@ -70,8 +70,8 @@ endif
 AS        		:= $(DEVKITA64)/bin/aarch64-elf-none-as
 OBJCOPY   		:= $(DEVKITA64)/bin/aarch64-elf-none-objcopy
 STRIP     		:= $(DEVKITA64)/bin/aarch64-elf-none-strip
-CC        		:= $(DEVKITA64)/bin/aarch64-elf-none-gcc
-DOLPHIN_LIB_CC 	:= := $(DEVKITA64)/bin/aarch64-elf-none-gcc
+CC        		:= $(DEVKITA64)/bin/aarch64-elf-none-cpp
+DOLPHIN_LIB_CC 	:= := $(DEVKITA64)/bin/aarch64-elf-none-cpp
 LD        		:= := $(DEVKITA64)/bin/aarch64-elf-none-ld
 ELF2DOL   		:= $(BUILD_PATH)/elf2dol
 YAZ0   			:= $(BUILD_PATH)/yaz0.so
