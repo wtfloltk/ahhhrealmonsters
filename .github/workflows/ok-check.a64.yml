@@ -26,7 +26,7 @@ jobs:
         apt install -y python pip
         # Install deps & setup
         pip install --user -r tools/requirements.txt
-        ./tp.py setup --skip-iso
+        ./tp setup --skip-iso
 
         # Download WiBo
         wget https://github.com/decompals/wibo/releases/download/0.4.2/wibo
