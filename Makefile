@@ -118,7 +118,7 @@ SBSS_PDHR 	:= 10
 default: all
 
 dol: $(DOL)
-	$(SHA1SUM) -c $(TARGET).sha1
+	$(SHA1SUM)  $(TARGET).sha1
 
 all: dirs dol
 # Make sure build directory exists before compiling anything
@@ -227,15 +227,15 @@ $(BUILD_DIR)/%.o: %.c $(BUILD_DIR)/%.d
 	@mkdir -p $(@D)
 	@echo building... $<
 	@$(ICONV) -f UTF-8 -t CP932 < $< > $(basename $@).c
-	@$(CC) $(CFLAGS) $(DEPFLAGS) -c -o $(dir $@) $(basename $@).c
-	@if [ -z '$(DISABLE_DEPS)' ]; then tools/transform-dep.py '$(basename $@).d' '$(basename $@).d'; touch -c $@; fi
+	@$(CC) $(CFLAGS) $(DEPFLAGS)  -o $(dir $@) $(basename $@).c
+	@if [ -z '$(DISABLE_DEPS)' ]; then tools/transform-dep.py '$(basename $@).d' '$(basename $@).d'; touch  $@; fi
 
 $(BUILD_DIR)/%.o: %.cpp $(BUILD_DIR)/%.d
 	@mkdir -p $(@D)
 	@echo building... $<
 	@$(ICONV) -f UTF-8 -t CP932 < $< > $(basename $@).cpp
-	@$(CC) $(CFLAGS) $(DEPFLAGS) -c -o $(dir $@) $(basename $@).cpp
-	@if [ -z '$(DISABLE_DEPS)' ]; then tools/transform-dep.py '$(basename $@).d' '$(basename $@).d'; touch -c $@; fi
+	@$(CC) $(CFLAGS) $(DEPFLAGS)  -o $(dir $@) $(basename $@).cpp
+	@if [ -z '$(DISABLE_DEPS)' ]; then tools/transform-dep.py '$(basename $@).d' '$(basename $@).d'; touch  $@; fi
 
 ifndef DISABLE_DEPS
 D_FILES := $(O_FILES:.o=.d)
@@ -246,7 +246,7 @@ endif
 # shared cpp files for RELs
 $(BUILD_DIR)/rel/%.o: rel/%.cpp
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -sdata 0 -sdata2 0 -c -o $@ $<
+	$(CC) $(CFLAGS) -sdata 0 -sdata2 0  -o $@ $<
 
 # include library and rel makefiles
 -include include_link.mk
