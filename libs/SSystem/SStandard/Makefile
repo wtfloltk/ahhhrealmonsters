@@ -25,7 +25,7 @@ $(BUILD_DIR)/libs/SSystem/SStandard/%.o: libs/SSystem/SStandard/%.cpp $(BUILD_DI
 	@mkdir -p $(@D)
 	@echo building... $<
 	@$(ICONV) -f UTF-8 -t CP932 < $< > $(basename $@).cpp
-	@$(CC) $(CFLAGS) $(LIBSSTANDARD_A_CFLAGS) $(DEPFLAGS) -c -o $(dir $@) $(basename $@).cpp
+	@$(CC) $(CFLAGS) $(LIBSSTANDARD_A_CFLAGS) $(DEPFLAGS)  -o $(dir $@) $(basename $@).cpp
 	@if [ -z '$(DISABLE_DEPS)' ]; then tools/transform-dep.py '$(basename $@).d' '$(basename $@).d'; touch -c $@; fi
 
 ifndef DISABLE_DEPS
