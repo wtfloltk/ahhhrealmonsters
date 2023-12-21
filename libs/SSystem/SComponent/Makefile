@@ -99,8 +99,8 @@ $(BUILD_DIR)/libs/SSystem/SComponent/%.o: libs/SSystem/SComponent/%.cpp $(BUILD_
 	@mkdir -p $(@D)
 	@echo building... $<
 	@$(ICONV) -f UTF-8 -t CP932 < $< > $(basename $@).cpp
-	@$(CC) $(CFLAGS) $(LIBSCOMPONENT_A_CFLAGS) $(DEPFLAGS) -c -o $(dir $@) $(basename $@).cpp
-	@if [ -z '$(DISABLE_DEPS)' ]; then tools/transform-dep.py '$(basename $@).d' '$(basename $@).d'; touch -c $@; fi
+	@$(CC) $(CFLAGS) $(LIBSCOMPONENT_A_CFLAGS) $(DEPFLAGS)  -o $(dir $@) $(basename $@).cpp
+	@if [ -z '$(DISABLE_DEPS)' ]; then tools/transform-dep.py '$(basename $@).d' '$(basename $@).d'; touch  $@; fi
 
 ifndef DISABLE_DEPS
 LIBSCOMPONENT_A_D_FILES := $(LIBSCOMPONENT_A_O_FILES:.o=.d)
