@@ -91,7 +91,7 @@ ASFLAGS := -mgekko -I include
 LDFLAGS := -unused -map $(MAP) -fp hard -nodefaults -w off
 
 # Compiler flags
-CFLAGS  += -Cpp_exceptions off -proc gekko -fp hard -O3 -nodefaults -str pool,readonly,reuse -RTTI off -maxerrors 5 -enum int $(INCLUDES)
+CFLAGS  += $(INCLUDES)
 
 DEPFLAGS := $(if $(DISABLE_DEPS),,-MD)
 
