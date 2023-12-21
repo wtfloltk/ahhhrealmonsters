@@ -91,7 +91,7 @@ ASFLAGS := -mgekko -I include
 LDFLAGS := -unused -map $(MAP) -fp hard -nodefaults -w off
 
 # Compiler flags
-CFLAGS  += $(INCLUDES)
+CFLAGS  += 
 
 DEPFLAGS := $(if $(DISABLE_DEPS),,-MD)
 
