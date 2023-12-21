@@ -39,7 +39,7 @@ jobs:
         cp -r /opt/devkitpro/devkitA64/bin/* .
         export devkita64=.
         ls
-        make all rels -j$(nproc)
+        make game -j$(nproc)
     - name: Create JSON for Progress & Upload
       if: github.event_name != 'pull_request'
       env: 
