@@ -70,8 +70,8 @@ endif
 AS        		:= ./aarch64-none-elf-as
 OBJCOPY   		:= ./aarch64-none-elf-objcopy
 STRIP     		:= ./aarch64-none-elf-strip
-CC        		:= ./aarch64-none-elf-c++
-DOLPHIN_LIB_CC 		:= ./aarch64-none-elf-c++
+CC        		:= ./aarch64-none-elf-g++
+DOLPHIN_LIB_CC 		:= ./aarch64-none-elf-g++
 LD        		:= ./aarch64-none-elf-ld
 ELF2DOL   		:= $(BUILD_PATH)/elf2dol
 YAZ0   			:= $(BUILD_PATH)/yaz0.so
